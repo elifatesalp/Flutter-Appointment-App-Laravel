@@ -79,6 +79,7 @@ class DioProvider {
         return 'Error';
       }
     } catch (error) {
+      print('Error: $error');
       return error;
     }
   }

@@ -53,11 +53,9 @@ class AuthModel extends ChangeNotifier {
 
     user = userData;
     appointment = appointmentInfo;
-    if (user['details']['fav'] != null) {
+    if (user['details'] != null && user['details']['fav'] != null) {
       _fav = json.decode(user['details']['fav']);
     }
-
-    //the details are return from user controller
     notifyListeners();
   }
 }

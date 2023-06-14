@@ -44,7 +44,7 @@ class AppointmentsController extends Controller
         //this controller is to store booking details post from mobile app
         $appointment = new Appointments();
         $appointment -> user_id = Auth::user()->id;
-        $appointment -> bc_id = $request->get('bc_id');
+        $appointment -> bc_id = $request->get('beautycenter_id');
         $appointment -> date = $request->get('date');
         $appointment -> day = $request->get('day');
         $appointment -> time = $request->get('time');
@@ -56,5 +56,7 @@ class AppointmentsController extends Controller
             'success'=>'New Appointment has been made successfully',
         ], 200);
     }
+
+
 
 }

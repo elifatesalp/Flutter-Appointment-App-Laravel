@@ -38,10 +38,10 @@ class UsersController extends Controller
             //sorting beauty center name and beauty center details
             foreach($beautycenter as $info){
                 if($data['bc_id']==$info['id']){
-                    $data['beautycenter_name']==$info['name'];
-                    $data['beautycenter_profile']==$info['profile_photo_url'];
+                    $data['beautycenter_name']=$info['name'];
+                    $data['beautycenter_profile']=$info['profile_photo_url'];
                     if(isset($appointment) && $appointment['bc_id'] == $info['id']){
-                        $data['appointments'] == $appointment;
+                        $data['appointments'] = $appointment;
                     }
                 }
             }

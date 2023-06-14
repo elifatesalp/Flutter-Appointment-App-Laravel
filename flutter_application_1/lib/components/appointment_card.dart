@@ -36,8 +36,12 @@ class _AppointmentCardState extends State<AppointmentCard> {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: NetworkImage(
-                        "http://127.0.0.1:8000${widget.beautycenter['beautycenter_profile']} ?? ''"), //insert beautycenter profile
+                    backgroundImage: (widget
+                                .beautycenter['beautycenter_profile'] !=
+                            null)
+                        ? NetworkImage(
+                            "http://127.0.0.1:8000${widget.beautycenter['beautycenter_profile']}")
+                        : null,
                   ),
                   const SizedBox(
                     width: 10,

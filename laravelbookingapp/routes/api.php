@@ -21,15 +21,13 @@ use App\Http\Controllers\UsersController;
 Route::post('/login', [UsersController::class,'login']);
 Route::post('/register',[UsersController::class,'register']);
 
-//modify this
-//this group mean return user's data if authenticated succesfully
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('/user',[UsersController::class,'index']);
-    Route::post('/fav',[UsersController::class,'storeFavBc']); //post to storeFavBc
+    Route::post('/fav',[UsersController::class,'storeFavBc']);
     Route::post('/logout',[UsersController::class, 'logout']);
     Route::post('/book',[AppointmentsController::class,'store']);
     Route::post('/reviews',[BeautyCentersController::class,'store']);
-    Route::get('/appointments',[AppointmentsController::class,'index']); //retrieve appointments
+    Route::get('/appointments',[AppointmentsController::class,'index']);
+    
 });
 
-//now, pass the booking data into database
